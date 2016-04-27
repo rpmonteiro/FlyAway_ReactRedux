@@ -30,6 +30,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.11.0",
     "babel-preset-stage-1": "^6.1.18",
     "eslint": "^2.8.0",
     "eslint-plugin-import": "^1.6.0",

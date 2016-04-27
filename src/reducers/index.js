@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import FlickrImageReducer from './flickr_image_reducer';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  flickrImages: FlickrImageReducer,
 });
 
 export default rootReducer;

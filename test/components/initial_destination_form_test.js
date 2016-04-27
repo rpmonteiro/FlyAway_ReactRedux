@@ -13,6 +13,6 @@ describe('Initial Destination Form', () => {
   });
 
   it('has the submit button', () => {
-    expect(component.find('button').to.exist);
+    expect(component.find('button')).to.exist;
   });
 });
