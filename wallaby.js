@@ -1,37 +1,20 @@
 module.exports = function (wallaby) {
   return {
     files: [
-      'src/components/*.js',
-      'src/actions/*.js',
-      'src/reducers/*.js'
+      { pattern: 'node_modules/babel-polyfill/dist/polyfill.js', instrument: false },
+      'src/**/*.js',
+      'test/test_helper.js',
     ],
 
     tests: [
-      'test/components/*.js'
+      'test/components/*.js',
     ],
-
     env: {
       type: 'node',
       runner: 'node',
-      params: {
-        env: 'NODE_ENV=test',
-        runner: '--harmony'
-      }
     },
-
-    testFramework: 'mocha',
-
     compilers: {
-      '**/*.js': wallaby.compilers.babel({
-        babel: require('babel-core'),
-        presets: ['es2015', 'stage-0']
-      })
+      '**/*.js': wallaby.compilers.babel(),
     },
-
-    setup: function () {
-      require("babel-polyfill");
-    },
-
-    debug: true
   };
 };
