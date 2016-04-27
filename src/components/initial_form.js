@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchFlickrImages } from '../actions/index';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class InitialForm extends React.Component {
@@ -40,8 +41,8 @@ class InitialForm extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { flickrImages: state.flickrImages };
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchFlickrImages }, dispatch);
 }
 
-export default connect(mapStateToProps, { fetchFlickrImages })(InitialForm);
+export default connect(null, mapDispatchToProps)(InitialForm);
